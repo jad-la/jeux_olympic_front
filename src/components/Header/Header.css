@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+  
+.header .logo {
+    width: 80px;
+    height: 60px;
+}
+.header .logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.header .nav {
+    display: flex;
+    gap: 48px; 
+}
+.header .nav a{
+      text-decoration: none; 
+      color: #A0BCE0;
+}
+ 
+.header .nav a:visited,  
+.header .nav a:active {
+    color: none; 
+}
+.header .nav a:hover{
+    text-decoration: underline; 
+}
+  
+.header .user-section {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: #A0BCE0;
+    cursor: pointer;
+}
+.header .user-section .user a:visited, 
+.header .user-section .user a:active {
+  color: none; 
+}

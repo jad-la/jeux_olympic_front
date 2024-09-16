@@ -1,0 +1,14 @@
+.event-page{
+    width: 100%;
+   
+}
+.main-event-page {
+    width: 90%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.h1-events{
+    font-size: 28px;
+}

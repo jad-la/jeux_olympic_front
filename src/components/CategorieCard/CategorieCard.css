@@ -1,0 +1,28 @@
+.categorie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px; 
+    cursor: pointer;
+    margin: 20px;
+    border: 1px solid;
+  }
+  .categorie-card:hover{
+    background-color: #A0BCE0; 
+    border: none;
+  }
+  
+  .categorie-icon {
+    font-size: 2rem; 
+    color: #333; 
+    margin-top: 10px;
+  }
+  
+  
+  .categorie-card p {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+   
+  }
