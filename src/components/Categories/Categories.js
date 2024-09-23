@@ -1,24 +1,24 @@
 import React from 'react';
 import './Categories.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CategorieCard from '../CategorieCard/CategorieCard';
 
-const Categories = () => {
-      const categories = [
-        { iconClass: 'fa-running', name: 'Athlétisme' },
-        { iconClass: 'fa-swimmer', name: 'Natation' },
-        { iconClass: 'fa-table-tennis', name: 'Tennis de table' },
-        { iconClass: 'fas fa-regular fa-futbol', name: 'Football' }
-      ];
+const Categories = ({ categories }) => {
+  const navigate = useNavigate();
+
+    //redirection vers la page du sport lorqu'on clique sur une catégorie
+    const handleClick = (categorie) => {
+        navigate(`/sports/${categorie.id}`, { state: { categoryName: categorie.name } });
+    };
     return (
-        <div className="categories-container">
+        <div className="section-categorie">
             <h2 className="categories-title">Catégories</h2>
             <div className="categories-list">
-              {categories.map(categorie => (
-                <Link to={`/events/${categorie.name.toLowerCase()}`} key={categorie.name}>
-                  <CategorieCard iconClass={categorie.iconClass} name={categorie.name} />
-                </Link>
-              ))}
+            {categories.map(categorie => (
+                    <div className='categories-container' key={categorie.id} onClick={() => handleClick(categorie)}>
+                        <CategorieCard name={categorie.name} description={categorie.description} />
+                    </div>
+                ))}
             </div>
       </div>
     );
