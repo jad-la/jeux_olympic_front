@@ -1,28 +1,29 @@
-.categorie-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 120px; 
-    cursor: pointer;
-    margin: 20px;
-    border: 1px solid;
-  }
-  .categorie-card:hover{
+.categorie-card{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  height: 60px;
+  border-radius: 10px;
+}
+.categorie-card:hover{
     background-color: #A0BCE0; 
     border: none;
-  }
-  
-  .categorie-icon {
-    font-size: 2rem; 
-    color: #333; 
-    margin-top: 10px;
-  }
-  
-  
-  .categorie-card p {
+}
+.categorie-card a{
+    text-decoration: none;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-color: #A0BCE0; 
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+    
+.categorie-card p {
     font-size: 0.8rem;
-    text-align: center;
     margin-top: 5px;
     margin-bottom: 10px;
    
-  }
+}
