@@ -2,11 +2,12 @@ import React from 'react';
 import './CategorieCard.css';
 import { Link } from 'react-router-dom';
 
-const CategorieCard = ({ iconClass, name }) => {
+const CategorieCard = ({ name, description }) => {
     return (
         <div className="categorie-card">
-            <i className={`fas ${iconClass} categorie-icon`}></i>
-            <Link to={`/events/${name.toLowerCase()}`}>{name}</Link>
+            {/*lien vers la page spécifique d'un sport, avec le nom du sport en minuscule dans l'URL */}
+            <Link to={`/sports/${name.toLowerCase()}`}>{name}</Link>
+            <p>{description}</p>
         </div>
     );
 };
