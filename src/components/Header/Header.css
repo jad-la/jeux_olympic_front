@@ -39,6 +39,10 @@
     color: #A0BCE0;
     cursor: pointer;
 }
+.header .user-section .cart a{
+    color: #A0BCE0;
+}
+
 .header .user-section .user a:visited, 
 .header .user-section .user a:active {
   color: none; 
