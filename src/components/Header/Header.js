@@ -1,8 +1,17 @@
 import React from 'react';
 import './Header.css'
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate  } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
+
+    // Fonction de déconnexion, suppresion du token et redirection
+    const handleLogout = () => {
+      localStorage.removeItem('token');  
+      navigate('/login');  
+  };
+
     return (
       <header className="header">
 
@@ -11,20 +20,29 @@ const Header = () => {
       </div>
 
       <nav className="nav">
-        <Link to="/">Home</Link>
-        <a href="#about">About</a>
-        <a href="#events">Events</a>
+        <Link to="/">Accueil</Link>
+        <a href="#about">Nous contacter</a>
         <Link to="/signup">S'inscrire</Link>
       </nav>
 
       <div className="user-section">
         <div className="cart">
-          <i className="fas fa-shopping-cart"></i>
+          <Link to="/cart">
+            <i className="fas fa-shopping-cart"></i>
+          </Link>
         </div>
         <div className="user">
-          <Link to="/login"> 
-            <i className="fa-regular fa-user"></i>
-          </Link>
+          {token ? (
+      // Utilisateur connecté : montre l'icône de déconnexion
+            <span onClick={handleLogout} style={{ cursor: 'pointer' }}>
+              <i className="fa-solid fa-arrow-right-from-bracket"></i> {/* Icône de déconnexion */}
+            </span>
+          ) : (
+      // Utilisateur non connecté : montre l'icône de connexion
+            <Link to="/login"> 
+              <i className="fa-regular fa-user"></i> {/* Icône de connexion */}
+            </Link>
+          )}
         </div>
       </div>
     </header>
