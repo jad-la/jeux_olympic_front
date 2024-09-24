@@ -3,7 +3,7 @@
    
 }
 .main-event-page {
-    width: 90%;
+    width: 96%;
     margin: 50px auto;
     display: flex;
     justify-content: space-around;
@@ -11,4 +11,5 @@
 }
 .h1-events{
     font-size: 28px;
+    margin-left: 20px;
 }
