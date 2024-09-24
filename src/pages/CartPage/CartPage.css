@@ -30,17 +30,18 @@
     margin: 0;
   }
   
-  .cart-item button {
-    background-color: #e5195f;
-    color: white;
+  .delete-btn {
     border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: transparent;
   }
+  .delete-btn .fa-trash-can{
+    color: #e5195f;
+    font-size: 18px;
+  }
+
   
-  .cart-item button:hover {
-    background-color: #c4123f;
+  .delete-btn .fa-trash-can:hover {
+    color: #c4123f;
   }
   
   .cart-page p {
@@ -48,3 +49,16 @@
     font-size: 1.1rem;
     color: #555;
   }
+
+  .cart-total {
+    display: flex;
+    justify-content: space-between;
+}
+.booking-btn {
+  background-color: #e5195f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
