@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Projet application web pour la réservation de e_tickets des Jeux Olympiques 2024 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+L'application permet aux utilisateur de parcourir différents événement liés à des sports spécifique, de se connect ou s'inscrire pour réserver leur tickets et de recevoir les tickets avec un QR code.
 
-## Available Scripts
+## Technologies utilisées
+- **Backend** : Django, Python, Django REST Framework 
+- **Frontend** : React 
+- **Base de données** : PostgreSQL
+- **Déploiement** :
+  - Backend déployé sur Render.
+  - Base de données PostgreSQL hébergée sur Render.
+  - Frontend déployé sur Netlify.
 
-In the project directory, you can run:
 
-### `npm start`
+## Composant principaux
+Le projet est composé de plusieur composants:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Header** : Affiche la navigation principale avec les liens vers les différentes pages (Accueil, Panier, Connexion, inscription...).
+- **Footer** : Contient des informations générales et les liens vers les différentes pages.
+- **CategorieCard** : Affiche chaque catégorie de sport avec nom et description.
+- **Categories** : Liste toutes les catégories de sports.
+- **Event** : Affiche les détails de cahque événement(nom, description, offres, date, lieu...).
+- **EventsPage** : Liste toutes les événements d'un sports.
+- **SignUp** : Formulaire pour l'inscription.
+- **Login** : Page de connexion.
+- **CartPage** : Affiche les articles ajoutés au panier. Les utilisateurs peuvent visualiser et retirer des articles avant d'acheter'.
+- **ticketsPage** : Affiche les différentes tickets générer avec QR codes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Configuration du projet
+### Pré-requis
+- Node.js
+- npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+1. Clonez le projet :
+   git clone https://github.com/jad-la/jeux_olympic_front.git
 
-### `npm run build`
+2. npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Configurer les variables d'environnement
+- Créez un fichier .env et ajoutez vos variables d'environnement pour l'API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Lancer le serveur
+- npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Déploiement
+-->Frontend (React)
+Le frontend est déployé sur Netlify. Voici les étapes pour effectuer le déploiement :
 
-### `npm run eject`
+- Connectez-vous à Netlify ou créez un compte.
+- Sélectionnez "Add new site" et connectez votre dépôt GitHub contenant le projet frontend.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
