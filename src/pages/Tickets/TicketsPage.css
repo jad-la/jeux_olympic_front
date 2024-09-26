@@ -1,0 +1,30 @@
+.tickets-list{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 90%;
+    margin:50px auto 70px;
+    list-style-type: none;
+}
+.ticket-item{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 25%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+.ticket-item button{
+    display: block;
+    border: none;
+    width: 60%;
+    height: 30px;
+    background-color: #e5195f;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+.ticket-item button a{
+    text-decoration: none;
+    color: white;
+}
