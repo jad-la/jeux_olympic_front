@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './TicketsPage'
+import './TicketsPage.css'
 import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -44,8 +44,7 @@ const TicketsPage = () => {
                 <p>Offre : {ticket.offer}</p>
                 <p>Date : {ticket.event.date}</p>
                 <p>Lieu : {ticket.event.location}</p>
-                <img src={ticket.qr_code} alt="QR Code du billet" className="qr-code" />
-                <a href={ticket.qr_code} download={`ticket-${ticket.id}.png`}>Télécharger le billet</a>
+                <button><a href={ticket.qr_code} download={`ticket-${ticket.id}.png`}>Télécharger le billet</a> </button>
               </li>
             ))}
           </ul>
