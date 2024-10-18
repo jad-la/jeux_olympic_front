@@ -8,8 +8,6 @@ import SignUp from './pages/Signup/SignUp';
 import CartPage from './pages/CartPage/CartPage';
 import TicketsPage from './pages/Tickets/TicketsPage';
 
-
-
 function App() {
   return (
     <Router>
