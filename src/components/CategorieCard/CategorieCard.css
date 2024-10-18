@@ -19,8 +19,11 @@
     align-items: center;
     justify-content: center;
     color: white;
+    padding: 0 5px ;
 }
-    
+.taille-a{
+    padding: 0 12px;
+} 
 .categorie-card p {
     font-size: 0.8rem;
     margin-top: 5px;
