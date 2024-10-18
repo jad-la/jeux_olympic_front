@@ -1,0 +1,42 @@
+.confidentialite {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .confidentialite h1, .confidentialite h2 {
+    color: #333;
+  }
+  
+  .confidentialite h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .confidentialite h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .confidentialite p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .confidentialite ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 10px;
+  }
+  
+  .confidentialite li {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+  }
