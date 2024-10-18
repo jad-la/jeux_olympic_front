@@ -7,8 +7,8 @@ import Login from './pages/Login/Login';
 import SignUp from './pages/Signup/SignUp';
 import CartPage from './pages/CartPage/CartPage';
 import TicketsPage from './pages/Tickets/TicketsPage';
-
-
+import Remboursement from './pages/Modalite-remboursement/Remboursement';
+import PolitiqueConfidentialite from './pages/Politique-confidentialite/PolitiqueConfidentialite';
 
 function App() {
   return (
@@ -20,6 +20,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<CartPage  />} />
         <Route path="/tickets" element={<TicketsPage />}/>  
+        <Route path="/Remboursement" element={<Remboursement />}/>  
+        <Route path="/Confidentialite" element={<PolitiqueConfidentialite />}/>  
       </Routes>
     </Router>
   );
