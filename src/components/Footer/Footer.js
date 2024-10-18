@@ -11,8 +11,8 @@ const Footer = () => {
                         <img src="/assets/images/jeux-olympiques-d-ete-2024-paris-france-dessin-a-la-main-pas-ai-illustration-vectorielle-2wb4pb7.jpg" alt="Logo" />
                     </div>
                     <a href="#contact">Nous contacter</a>
-                    <a href="#remboursement">Modalités de remboursement</a>
-                    <a href="#mention-legales">Mentions légales</a>
+                    <Link to="/remboursement">Modalités de remboursement</Link>
+                    <Link to="/confidentialite">Politique de confidentialité</Link>
                 </div>
                 <div className="footer-section">
                     <h4>Plan du site</h4>

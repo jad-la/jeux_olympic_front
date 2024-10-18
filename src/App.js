@@ -6,6 +6,8 @@ import EventsPage from './pages/Evenement/EventsPage';
 import Login from './pages/Login/Login';
 import SignUp from './pages/Signup/SignUp';
 import CartPage from './pages/CartPage/CartPage'
+import Remboursement from './pages/Modalite-remboursement/Remboursement'
+import PolitiqueConfidentialite from './pages/Politique-confidentialite/PolitiqueConfidentialite';
 
 
 
@@ -39,6 +41,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/cart" element={<CartPage cart={cart} removeFromCart={removeFromCart} />} />
+        <Route path="/remboursement" element={<Remboursement/>} />
+        <Route path="/confidentialite" element={<PolitiqueConfidentialite />} />
       </Routes>
     </Router>
   );
