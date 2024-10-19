@@ -9,6 +9,7 @@ import CartPage from './pages/CartPage/CartPage';
 import TicketsPage from './pages/Tickets/TicketsPage';
 import Remboursement from './pages/Modalite-remboursement/Remboursement';
 import PolitiqueConfidentialite from './pages/Politique-confidentialite/PolitiqueConfidentialite';
+import UserManuel from './components/UserManual/UserManual';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/tickets" element={<TicketsPage />}/>  
         <Route path="/Remboursement" element={<Remboursement />}/>  
         <Route path="/Confidentialite" element={<PolitiqueConfidentialite />}/>  
+        <Route path="/manuel-utilisation" element={<UserManuel />}/>  
       </Routes>
     </Router>
   );
