@@ -13,6 +13,7 @@ const Footer = () => {
                     <a href="#contact">Nous contacter</a>
                     <Link to="/remboursement">Modalités de remboursement</Link>
                     <Link to="/confidentialite">Politique de confidentialité</Link>
+                    <Link to="/manuel-utilisation">Manuel d'utilisation</Link>
                 </div>
                 <div className="footer-section">
                     <h4>Plan du site</h4>
