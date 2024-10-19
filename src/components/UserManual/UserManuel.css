@@ -30,10 +30,11 @@
   }
   
   .user-manual img {
-    width: 200px; 
+    display: block;
+    width: 80%; 
     object-fit: cover;
     border-radius: 5px;
-    margin-top: 10px;
+    margin: 10px auto;
     margin-bottom: 20px;
   }
   
