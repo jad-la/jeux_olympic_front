@@ -1,0 +1,42 @@
+.user-manual {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .user-manual h1, .user-manual h2 {
+    color: #333;
+  }
+  
+  .user-manual h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .user-manual h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .user-manual p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .user-manual img {
+    width: 200px; 
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .user-manual div {
+    margin-bottom: 20px;
+  }
