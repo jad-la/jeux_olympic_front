@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Header.css'
 import { Link,  useNavigate  } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  const [menu, setMenu] = useState(false);
+  
+  //Fonction menu quand utilisateur est connecter
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
 
     // Fonction de déconnexion, suppresion du token et redirection
     const handleLogout = () => {
@@ -33,14 +39,25 @@ const Header = () => {
         </div>
         <div className="user">
           {token ? (
-      // Utilisateur connecté : montre l'icône de déconnexion
-            <span onClick={handleLogout} style={{ cursor: 'pointer' }}>
-              <i className="fa-solid fa-arrow-right-from-bracket"></i> {/* Icône de déconnexion */}
-            </span>
+      // Utilisateur connecté : montre le menu
+            <div className="burger-menu">
+              <span onClick={toggleMenu} style={{ cursor: 'pointer' }}>
+                <i className="fa-solid fa-bars"></i> {/* Icône du menu burger */}
+              </span>
+              {menu && (
+                <div className="dropdown-menu">
+                  <Link to="/tickets" onClick={() => setMenu(false)}>Mes tickets</Link>
+                  <span onClick={handleLogout} style={{ cursor: 'pointer' }}>Déconnexion</span>
+                </div>
+              )}
+            </div>
+            // <span onClick={handleLogout} style={{ cursor: 'pointer' }}>
+            //   <i className="fa-solid fa-arrow-right-from-bracket"></i> 
+            // </span>
           ) : (
       // Utilisateur non connecté : montre l'icône de connexion
             <Link to="/login"> 
-              <i className="fa-regular fa-user"></i> {/* Icône de connexion */}
+              <i className="fa-regular fa-user"></i> 
             </Link>
           )}
         </div>
