@@ -47,3 +47,30 @@
 .header .user-section .user a:active {
   color: none; 
 }
+
+.burger-menu {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    background-color: #c7d5e773;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.dropdown-menu a, .dropdown-menu span {
+    margin: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+  
+.dropdown-menu a:hover, .dropdown-menu span:hover {
+    text-decoration: underline;
+}
