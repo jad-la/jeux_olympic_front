@@ -10,6 +10,7 @@ import TicketsPage from './pages/Tickets/TicketsPage';
 import Remboursement from './pages/Modalite-remboursement/Remboursement';
 import PolitiqueConfidentialite from './pages/Politique-confidentialite/PolitiqueConfidentialite';
 import UserManuel from './components/UserManual/UserManual';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/sports/:categoryId" element={<EventsPage />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartPage  />} />
         <Route path="/tickets" element={<TicketsPage />}/>  
         <Route path="/Remboursement" element={<Remboursement />}/>  
