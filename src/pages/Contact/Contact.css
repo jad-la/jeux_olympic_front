@@ -1,0 +1,64 @@
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow:  0 4px 8px #0000001a;
+    border-radius: 10px;
+}
+  
+.contact-info, .contact-form {
+    margin-bottom: 20px;
+}
+  
+h2 {
+    color: black;
+    margin-bottom: 10px;
+}
+  
+.contact-info p {
+    line-height: 1.5;
+}
+  
+.phone-number {
+    font-weight: bold;
+}
+  
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+  
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+  
+input[type="text"],
+input[type="email"] {
+    flex: 1;
+}
+  
+textarea {
+    height: 100px;
+}
+  
+button {
+    background-color: #E5195F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
