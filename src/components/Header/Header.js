@@ -21,7 +21,7 @@ const Header = () => {
 
       <nav className="nav">
         <Link to="/">Accueil</Link>
-        <a href="#about">Nous contacter</a>
+        <Link to="/contact">Nous contacter</Link>
         <Link to="/signup">S'inscrire</Link>
       </nav>
 
