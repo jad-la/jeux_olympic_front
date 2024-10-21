@@ -19,12 +19,12 @@ const UserManuel = () => {
                 <div>
                     <h2>Sélection des Épreuves et Ajout au Panier</h2>
                     <p>Après avoir sélectionné une catégorie de sport, vous serez redirigé vers la page des épreuves. Chaque épreuve affiche des détails comme le lieu, la date, l'heure et les offres disponibles (solo, duo, familiale).</p>
-                    <img srs="/assets/images/Choisir_offre.png" alt="Page de panier" />
+                    <img src="/assets/images/Choisir_offre.png" alt="Page de panier" />
                     <p>Une fois que vous avez choisi une épreuve et une offre (solo, duo, familiale), cliquez sur le bouton "Ajouter au panier".
                         Si vous êtes connecté : L’article sera directement ajouté au panier.
                         Si vous n'êtes pas connecté : Une popup apparaîtra pour vous demander de vous connecter ou de vous inscrire.
                     </p>
-                    <img srs="/assets/images/Choisir_offre.png" alt="Popup" />
+                    <img src="/assets/images/Choisir_offre.png" alt="Popup" />
                 </div>
                 <div>
                     <h2>Gestion du Panier</h2>
