@@ -44,11 +44,6 @@ const PolitiqueConfidentialite = () => {
                     Nous mettons en place des mesures de sécurité pour protéger vos données contre l'accès non autorisé.
                 </p>
 
-                <h2>6. Modifications</h2>
-                <p>
-                    Nous nous réservons le droit de modifier cette politique. Toute modification sera publiée sur cette page, avec la date de la dernière mise à jour.
-                </p>
-
                 <p><strong>Dernière mise à jour :</strong> 17 octobre 2024</p>
             </main>
 
