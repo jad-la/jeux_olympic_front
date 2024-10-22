@@ -31,7 +31,7 @@ const SignUp = () => {
     setErrorMessage({}); 
     // on vérifie de la correspondance des mots de passe
     if (formData.password !== formData.confirmPassword) {
-      setErrorMessage('Les mots de passe ne correspondent pas.');
+      setErrorMessage({password: ['Les mots de passe ne correspondent pas.']});
       return;
     }
 
