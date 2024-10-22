@@ -79,27 +79,27 @@ const SignUp = () => {
         <h2>Inscription</h2>
         <p>Entrez vos informations</p>
 
-        {errorMessage && <p className="error-message">{errorMessage.general}</p>}
+        {errorMessage && <p className="p-error">{errorMessage.general}</p>}
         <form onSubmit={handleSubmit} noValidate>
           <label>Nom</label>
           <input type="text" name="lastname" value={formData.lastname} onChange={handleInputChange} required />
-          {errorMessage.last_name && <p className="error-message">{errorMessage.last_name}</p>}
+          {errorMessage.last_name && <p className="p-error">{errorMessage.last_name}</p>}
 
           <label>Prénom</label>
           <input type="text" name="firstname"  value={formData.firstname} onChange={handleInputChange} required />
-          {errorMessage.first_name && <p className="error-message">{errorMessage.first_name}</p>}
+          {errorMessage.first_name && <p className="p-error">{errorMessage.first_name}</p>}
 
           <label>Email</label>
           <input type="email" name="email" value={formData.email}  onChange={handleInputChange} required />
-          {errorMessage.email && <p className="error-message">{errorMessage.email}</p>}
+          {errorMessage.email && <p className="p-error">{errorMessage.email}</p>}
 
           <label>Mot de passe</label>
           <input type="password" name="password"  value={formData.password}  onChange={handleInputChange} required />
-          {errorMessage.password && <p className="error-message">{errorMessage.password}</p>}
+          {errorMessage.password && <p className="p-error">{errorMessage.password}</p>}
 
           <label>Confirmation de mot de passe</label>
           <input type="password" name="confirmPassword"  value={formData.confirmPassword}  onChange={handleInputChange} required />
-          {errorMessage.password2 && <p className="error-message">{errorMessage.password2}</p>}
+          {errorMessage.password2 && <p className="p-error">{errorMessage.password2}</p>}
           
           <button type="submit">S'inscrire</button>
           <p className="already-member">Déjà inscrit? <Link to="/login">Se connecter</Link></p>
