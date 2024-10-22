@@ -61,10 +61,11 @@ const SignUp = () => {
         // navigate('/login');
       }
     } catch (error) {
-      if (error.response && error.response.data) {
+      if (error.response && error.response.data && error.response.data.erreurs) {
         // Affiche les détails de l'erreur en cas d'echec
+        console.log(error.response);
         console.log(error.response.data);
-        setErrorMessage(error.response.data);
+        setErrorMessage(error.response.data.erreurs);
       }else {
       setErrorMessage({general: 'Erreur lors de l’inscription. Veuillez réessayer.'});
       }
@@ -79,7 +80,7 @@ const SignUp = () => {
         <p>Entrez vos informations</p>
 
         {errorMessage && <p className="error-message">{errorMessage.general}</p>}
-        <form onSubmit={handleSubmit} novalidate>
+        <form onSubmit={handleSubmit} noValidate>
           <label>Nom</label>
           <input type="text" name="lastname" value={formData.lastname} onChange={handleInputChange} required />
           {errorMessage.last_name && <p className="error-message">{errorMessage.last_name}</p>}
