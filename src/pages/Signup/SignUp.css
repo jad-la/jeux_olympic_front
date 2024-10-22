@@ -16,6 +16,12 @@
   .signup-form h2, .signup-form p {
     text-align: center;
   }
+
+  .p-error{
+    font-size: 10px;
+    color: #c35858;
+    margin: 5px auto;
+  }
   
   .signup-form form {
     display: flex;
