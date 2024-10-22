@@ -2,8 +2,9 @@ import React, { useState }  from 'react';
 import './SignUp.css'; 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +14,8 @@ const SignUp = () => {
     password: '',
     confirmPassword: ''
   });
-  const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState({});
+  // const navigate = useNavigate();
 
   //on met à jour l'état à chaque modification des champs du formulaire
   const handleInputChange = (e) => {
@@ -27,6 +28,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage({}); 
     // on vérifie de la correspondance des mots de passe
     if (formData.password !== formData.confirmPassword) {
       setErrorMessage('Les mots de passe ne correspondent pas.');
@@ -49,16 +51,22 @@ const SignUp = () => {
       });
       
       if (response.status === 201) {
-        // Redirige l'utilisateur vers la page de connexion après une inscription réussie
-        navigate('/login');
+       // Afficher une popup de succès avec un lien vers la page de connexion
+        Swal.fire({
+          icon: 'success',
+          title: 'Inscription réussie',
+          html: 'Vous êtes bien inscrit. <a href="/login">Connectez-vous ici</a>',
+          showConfirmButton: false
+        });
+        // navigate('/login');
       }
     } catch (error) {
-      if (error.response) {
+      if (error.response && error.response.data) {
         // Affiche les détails de l'erreur en cas d'echec
         console.log(error.response.data);
-        setErrorMessage('Erreur lors de l’inscription : ' + error.response.data);
+        setErrorMessage(error.response.data);
       }else {
-      setErrorMessage('Erreur lors de l’inscription. Veuillez réessayer.');
+      setErrorMessage({general: 'Erreur lors de l’inscription. Veuillez réessayer.'});
       }
     }
   }; 
@@ -70,18 +78,28 @@ const SignUp = () => {
         <h2>Inscription</h2>
         <p>Entrez vos informations</p>
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <form onSubmit={handleSubmit}>
+        {errorMessage && <p className="error-message">{errorMessage.general}</p>}
+        <form onSubmit={handleSubmit} novalidate>
           <label>Nom</label>
           <input type="text" name="lastname" value={formData.lastname} onChange={handleInputChange} required />
+          {errorMessage.last_name && <p className="error-message">{errorMessage.last_name}</p>}
+
           <label>Prénom</label>
           <input type="text" name="firstname"  value={formData.firstname} onChange={handleInputChange} required />
+          {errorMessage.first_name && <p className="error-message">{errorMessage.first_name}</p>}
+
           <label>Email</label>
           <input type="email" name="email" value={formData.email}  onChange={handleInputChange} required />
+          {errorMessage.email && <p className="error-message">{errorMessage.email}</p>}
+
           <label>Mot de passe</label>
           <input type="password" name="password"  value={formData.password}  onChange={handleInputChange} required />
+          {errorMessage.password && <p className="error-message">{errorMessage.password}</p>}
+
           <label>Confirmation de mot de passe</label>
           <input type="password" name="confirmPassword"  value={formData.confirmPassword}  onChange={handleInputChange} required />
+          {errorMessage.password2 && <p className="error-message">{errorMessage.password2}</p>}
+          
           <button type="submit">S'inscrire</button>
           <p className="already-member">Déjà inscrit? <Link to="/login">Se connecter</Link></p>
         </form>
