@@ -24,7 +24,7 @@ const UserManuel = () => {
                         Si vous êtes connecté : L’article sera directement ajouté au panier.
                         Si vous n'êtes pas connecté : Une popup apparaîtra pour vous demander de vous connecter ou de vous inscrire.
                     </p>
-                    <img src="/assets/images/Choisir_offre.png" alt="Popup" />
+                    <img src="/assets/images/Cliquer_ inscrire.png" alt="Popup" />
                 </div>
                 <div>
                     <h2>Gestion du Panier</h2>
