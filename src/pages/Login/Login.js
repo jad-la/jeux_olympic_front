@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState({});
   const navigate = useNavigate();
 
   // mettre à jour les champs du formulaire lors de la saisie
@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setErrorMessage({}); 
     try {
       //Requête pour une connexion
       const response = await axios.post(
@@ -48,10 +48,18 @@ const Login = () => {
         }
       }
     } catch (error) {
-      if (error.response) {
-        setErrorMessage('Email ou mot de passe incorrect.');
+      if (error.response && error.response.data && error.response.data.erreurs) {
+        console.log('Erreur capturée:', error.response.data);
+
+        
+        setErrorMessage(error.response.data.erreurs);
+      } else if (error.response && error.response.data && error.response.data.detail) {
+        console.log(error.response.data);
+        // Gérer le message général (par exemple, "Aucun compte actif...")
+        setErrorMessage({ general: error.response.data.detail });
       } else {
-        setErrorMessage('Erreur lors de la connexion. Veuillez réessayer.');
+        console.log('Erreur capturée:', error.response.data);
+        setErrorMessage({general:'Erreur lors de la connexion. Veuillez réessayer.'});
       }
     }
   };
@@ -61,13 +69,17 @@ const Login = () => {
             <div className="login-form">
                 <h2>Se connecter</h2>
                 
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
-                <form  onSubmit={handleSubmit}>
+                <form  onSubmit={handleSubmit} noValidate>
                 <label>Email</label>
                 <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                {errorMessage.email && <p className="error-message">{errorMessage.email}</p>}
+
                 <label>Password</label>
                 <input type="password" name="password" value={formData.password} onChange={handleInputChange} required />
+                {errorMessage.password && <p className="error-message">{errorMessage.password}</p>}
+
                 <button type="submit">Se connecter</button>
+                {errorMessage.general && <p className="error-message">{errorMessage.general}</p>}
                 <p className="forgot-password">Mot de passe oublié?</p>
                 </form>
             </div>
