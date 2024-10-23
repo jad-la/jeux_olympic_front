@@ -4,9 +4,10 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const [formData, setFormData] = useState({ email: '', password: '' });
+  const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState({});
   const navigate = useNavigate();
 
@@ -42,23 +43,33 @@ const Login = () => {
           // Stocke le token dans le localStorage
           localStorage.setItem('token', token);
           // Redirige l'utilisateur vers la page d'accueil 
-          navigate('/');
+          Swal.fire({
+            icon: 'success',
+            title: 'Connexion réussie',
+            text: 'Vous allez être redirigé...',
+            timer: 1000,  
+            showConfirmButton: false,  
+            timerProgressBar: true,   
+            willClose: () => {
+              navigate('/');
+            }
+          });
+
         } else {
           setErrorMessage('Le token est manquant dans la réponse du serveur.');
         }
+        
       }
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.erreurs) {
+      if (error.response && error.response.data) {
         console.log('Erreur capturée:', error.response.data);
-
         
-        setErrorMessage(error.response.data.erreurs);
-      } else if (error.response && error.response.data && error.response.data.detail) {
-        console.log(error.response.data);
-        // Gérer le message général (par exemple, "Aucun compte actif...")
-        setErrorMessage({ general: error.response.data.detail });
-      } else {
-        console.log('Erreur capturée:', error.response.data);
+        if (error.response.data.email || error.response.data.password) {
+          setErrorMessage(error.response.data)
+        } else if(error.response.data.detail) {
+          setErrorMessage({ general: error.response.data.detail });
+        }
+      }else{
         setErrorMessage({general:'Erreur lors de la connexion. Veuillez réessayer.'});
       }
     }
