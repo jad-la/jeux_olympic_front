@@ -51,3 +51,10 @@
     margin-top: 15px;
     cursor: pointer;
   }
+  
+  .error-message{
+    font-size: 10px;
+    color: #c35858;
+    margin: 5px auto;
+  }
+  
