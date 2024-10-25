@@ -1,3 +1,8 @@
+.tickets-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .tickets-list{
     display: flex;
     justify-content: space-around;
